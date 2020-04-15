@@ -47,9 +47,7 @@ public class ballmovement : MonoBehaviour
     // perintah
     IEnumerator jedabolaP1() {
         
-        int x = Random.Range(0, 2) * 2 - 1;
-        int y = Random.Range(0, 2) * 2 - 1;
-        int speed = Random.Range(20, 26);
+        
 
     sesuatu.velocity = Vector2.zero;
     animtr.SetBool("IsMove",false);
@@ -57,23 +55,30 @@ public class ballmovement : MonoBehaviour
     counterP1++;
     scoreText1.text = counterP1.ToString();
     yield return new WaitForSeconds(1);
-    sesuatu.velocity = new Vector2 (x, y)*speed;//Jika P1 mencetak score maka bola dimulai ke arah P1
+
+        int x = Random.Range(0, 2) * 2 - 1;
+        int y = Random.Range(0, 2) * 2 - 1;
+        int speed = Random.Range(20, 26);
+    
+    sesuatu.velocity = new Vector2 (x, y) * speed;//Jika P1 mencetak score maka bola dimulai ke arah P1
     animtr.SetBool("IsMove",true);
     
     }
 
     IEnumerator jedabolaP2() {
         
-        int x = Random.Range(0, 2) * 2 - 1;
-        int y = Random.Range(0, 2) * 2 - 1;
-        int speed = Random.Range(20, 26);
-
+        
     sesuatu.velocity = Vector2.zero;
     animtr.SetBool("IsMove",false);
     sesuatu.GetComponent<Transform>().position = Vector2.zero;
     counterP2++;
     scoreText2.text = counterP2.ToString();
     yield return new WaitForSeconds(1);
+        
+        int x = Random.Range(0, 2) * 2 - 1;
+        int y = Random.Range(0, 2) * 2 - 1;
+        int speed = Random.Range(20, 26);
+
     sesuatu.velocity = new Vector2 (x, y) * speed; //Jika P2 mencetak score maka bola dimulai ke arah P2
     animtr.SetBool("IsMove",true);
     
